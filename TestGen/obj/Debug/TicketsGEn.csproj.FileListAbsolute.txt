@@ -1,0 +1,10 @@
+e:\work\need_data\!составление_билетов\v2\TestGen\bin\Debug\TestGen.exe.config
+e:\work\need_data\!составление_билетов\v2\TestGen\obj\Debug\TicketsGEn.csproj.ResolveComReference.cache
+e:\work\need_data\!составление_билетов\v2\TestGen\obj\Debug\TestGen.exe
+e:\work\need_data\!составление_билетов\v2\TestGen\obj\Debug\TestGen.pdb
+e:\work\need_data\!составление_билетов\v2\TestGen\bin\Debug\TestGen.exe
+e:\work\need_data\!составление_билетов\v2\TestGen\bin\Debug\TestGen.pdb
+e:\work\need_data\!составление_билетов\v2\TestGen\obj\Debug\TicketsGen.csprojResolveAssemblyReference.cache
+e:\work\need_data\!составление_билетов\v2\TestGen\obj\Debug\TestGen.MainForm.resources
+e:\work\need_data\!составление_билетов\v2\TestGen\obj\Debug\TestGen.Properties.Resources.resources
+e:\work\need_data\!составление_билетов\v2\TestGen\obj\Debug\TicketsGen.csproj.GenerateResource.Cache
