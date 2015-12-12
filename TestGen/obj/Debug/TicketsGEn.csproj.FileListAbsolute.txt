@@ -8,3 +8,12 @@ e:\work\need_data\!составление_билетов\v2\TestGen\obj\Debug\Ti
 e:\work\need_data\!составление_билетов\v2\TestGen\obj\Debug\TestGen.MainForm.resources
 e:\work\need_data\!составление_билетов\v2\TestGen\obj\Debug\TestGen.Properties.Resources.resources
 e:\work\need_data\!составление_билетов\v2\TestGen\obj\Debug\TicketsGen.csproj.GenerateResource.Cache
+d:\Dropbox\repository\TestGen\TestGen\TestGen\bin\Debug\TestGen.exe.config
+d:\Dropbox\repository\TestGen\TestGen\TestGen\bin\Debug\TestGen.exe
+d:\Dropbox\repository\TestGen\TestGen\TestGen\bin\Debug\TestGen.pdb
+d:\Dropbox\repository\TestGen\TestGen\TestGen\obj\Debug\TicketsGen.csproj.ResolveComReference.cache
+d:\Dropbox\repository\TestGen\TestGen\TestGen\obj\Debug\TestGen.MainForm.resources
+d:\Dropbox\repository\TestGen\TestGen\TestGen\obj\Debug\TestGen.Properties.Resources.resources
+d:\Dropbox\repository\TestGen\TestGen\TestGen\obj\Debug\TicketsGen.csproj.GenerateResource.Cache
+d:\Dropbox\repository\TestGen\TestGen\TestGen\obj\Debug\TestGen.exe
+d:\Dropbox\repository\TestGen\TestGen\TestGen\obj\Debug\TestGen.pdb

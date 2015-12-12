@@ -46,14 +46,14 @@
             this.BuildTickets = new System.Windows.Forms.Button();
             this.LoadLabels = new System.Windows.Forms.Button();
             this.SaveLabels = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.LabelsdataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabelsdataGridView)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,9 +92,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(5, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 13);
+            this.label5.Size = new System.Drawing.Size(110, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Количество Билетов";
+            this.label5.Text = "Количество билетов";
             // 
             // label6
             // 
@@ -157,7 +157,7 @@
             this.panel2.Controls.Add(this.BuildTickets);
             this.panel2.Controls.Add(this.LoadLabels);
             this.panel2.Controls.Add(this.SaveLabels);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.LabelsdataGridView);
             this.panel2.Location = new System.Drawing.Point(25, 140);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(676, 315);
@@ -225,17 +225,17 @@
             this.SaveLabels.UseVisualStyleBackColor = true;
             this.SaveLabels.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // LabelsdataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LabelsdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LabelsdataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(543, 186);
-            this.dataGridView1.TabIndex = 0;
+            this.LabelsdataGridView.Location = new System.Drawing.Point(16, 74);
+            this.LabelsdataGridView.Name = "LabelsdataGridView";
+            this.LabelsdataGridView.Size = new System.Drawing.Size(543, 186);
+            this.LabelsdataGridView.TabIndex = 0;
             // 
             // Column1
             // 
@@ -266,6 +266,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(399, 118);
             this.panel4.TabIndex = 31;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // MainForm
             // 
@@ -283,7 +284,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabelsdataGridView)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -303,7 +304,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView LabelsdataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

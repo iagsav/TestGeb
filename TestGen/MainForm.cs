@@ -23,16 +23,18 @@ namespace TestGen
         //QuantityPracticalQuestions количество практических вопросов в одном билете
         public string pathToTemplate;
         public int QuantityOfTickets, QuantityOfTheoreticalQuestions, QuantityOfPracticalQuestions;
+        public bool patternOpen = false;
 
         private void OpenTemplate_Click(object sender, EventArgs e)
         {
             OpenFileDialog openTemplate = new OpenFileDialog();
             openTemplate.InitialDirectory = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
-            openTemplate.Filter = "All file (*.*) | *.*| doc|*.doc";
+            openTemplate.Filter = "All file (*.*)|*.*|doc|*.doc";
             openTemplate.FilterIndex = 2;
             if (openTemplate.ShowDialog() == DialogResult.OK)
             {
                 pathToTemplate = openTemplate.FileName;
+                patternOpen = true;
             }
         }
 
@@ -45,7 +47,7 @@ namespace TestGen
         private void OpenTheoreticalQuestions_Click(object sender, EventArgs e)
         {
             OpenFileDialog OpenTheoreticalQuestions = new OpenFileDialog();
-            OpenTheoreticalQuestions.Filter = "All file (*.*) | *.*| Text file |*.txt";
+            OpenTheoreticalQuestions.Filter = "All file (*.*)|*.*|Text file|*.txt";
             OpenTheoreticalQuestions.FilterIndex = 2;
             if (OpenTheoreticalQuestions.ShowDialog() == DialogResult.OK)
             {
@@ -59,7 +61,7 @@ namespace TestGen
         private void OpenPracticalQuestions_Click(object sender, EventArgs e)
         {
             OpenFileDialog OpenPracticalQuestions = new OpenFileDialog();
-            OpenPracticalQuestions.Filter = "All file (*.*) | *.*| Text file |*.txt";
+            OpenPracticalQuestions.Filter = "All file (*.*)|*.*|Text file|*.txt";
             OpenPracticalQuestions.FilterIndex = 2;
             if (OpenPracticalQuestions.ShowDialog() == DialogResult.OK)
             {
@@ -235,12 +237,20 @@ namespace TestGen
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //проверка на введеное кол билетов и кол вопросов
+            
+            // открыт ли шаблон билета?
+            if (patternOpen == false)
+            {
+                MessageBox.Show("Не указан шаблон билета");
+                return;
+            }
 
+
+            //проверка на введеное кол билетов и кол вопросов
             if (textBox1.Text == null)
             {
                 MessageBox.Show("Не указано количество билетов");
-
+                return;
             }
 
             else if ((QuantityOfPracticalQuestions == 0) || (QuantityOfTheoreticalQuestions == 0))
@@ -266,7 +276,6 @@ namespace TestGen
                 extend = Microsoft.Office.Interop.Word.WdMovementType.wdMove;
                 object oType;
                 oType = Microsoft.Office.Interop.Word.WdBreakType.wdSectionBreakNextPage;
-
 
                 //-------------------------------------------------
 
@@ -324,19 +333,14 @@ namespace TestGen
                         Q[jp + ip] = "#q" + (jp + ip);
                     }
 
-
                     //генерируем случайную последовательность чисел для блока вопровов
                     CreateSequenceTheoreticalQuestions();
                     CreateSequencePracticalQuestions();
-
-
-                    //count - номер билета
-
-                    //-----------------------------------
                     int number = 1;
                     int numberBilet = 1;
 
                     //генерация билетов
+                    //count - номер билета
                     for (int count = 1; count <= QuantityOfTickets; count++)
                     {
                         ///Поиск и замена меток на заданный текст,
@@ -345,10 +349,10 @@ namespace TestGen
                         string tag;
                         string pastText;
 
-                        for (int i = 0; i < Convert.ToInt32(Convert.ToString(this.dataGridView1.RowCount.ToString())) - 1; i++)
+                        for (int i = 0; i < Convert.ToInt32(Convert.ToString(this.LabelsdataGridView.RowCount.ToString())) - 1; i++)
                         {
-                            tag = Convert.ToString(this.dataGridView1.Rows[i].Cells[0].Value);
-                            pastText = Convert.ToString(this.dataGridView1.Rows[i].Cells[1].Value);
+                            tag = Convert.ToString(this.LabelsdataGridView.Rows[i].Cells[0].Value);
+                            pastText = Convert.ToString(this.LabelsdataGridView.Rows[i].Cells[1].Value);
 
                             if (!tag.Equals(pastText))
                             {
@@ -492,7 +496,7 @@ namespace TestGen
 
                         string[] str1 = myRead.ReadToEnd().Split('\n');
                         num = str1.Count();
-                        dataGridView1.RowCount = num;
+                        LabelsdataGridView.RowCount = num;
 
 
                         for (int i = 0; i < num; i++)
@@ -507,11 +511,11 @@ namespace TestGen
                             {
 
                                 str = str1[i].Split(':');
-                                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                                for (int j = 0; j < LabelsdataGridView.ColumnCount; j++)
                                 {
                                     try
                                     {
-                                        dataGridView1.Rows[i - 1].Cells[j].Value = str[j];
+                                        LabelsdataGridView.Rows[i - 1].Cells[j].Value = str[j];
                                     }
                                     catch (Exception ex)
                                     {
@@ -552,15 +556,15 @@ namespace TestGen
                         myWriter.Write(TagOfBlokQuestions.Text);
                         myWriter.Write(":");
                         myWriter.WriteLine(TagOfNumberTickets.Text);
-                        for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                        for (int i = 0; i < LabelsdataGridView.RowCount - 1; i++)
                         {
-                            for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                            for (int j = 0; j < LabelsdataGridView.ColumnCount; j++)
                             {
-                                myWriter.Write(dataGridView1.Rows[i].Cells[j].Value.ToString());
-                                if ((dataGridView1.ColumnCount - j) != 1) myWriter.Write(":");
+                                myWriter.Write(LabelsdataGridView.Rows[i].Cells[j].Value.ToString());
+                                if ((LabelsdataGridView.ColumnCount - j) != 1) myWriter.Write(":");
                             }
 
-                            if (((dataGridView1.RowCount - 1) - i - 1) != 0) myWriter.WriteLine();
+                            if (((LabelsdataGridView.RowCount - 1) - i - 1) != 0) myWriter.WriteLine();
                         }
                     }
                     catch (Exception ex)
@@ -574,6 +578,11 @@ namespace TestGen
                 }
                 myStream.Close();
             }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 
